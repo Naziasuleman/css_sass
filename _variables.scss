@@ -1,0 +1,54 @@
+$palettes: (
+  error: (
+    400: #f87171,
+  ),
+  info: (
+    50: #e8edfb,
+    100: #bbcaf3,
+    200: #8ea7ec,
+    300: #6183e4,
+    400: #3460dc,
+  ),
+  neutral: (
+    50: #f9fafc,
+    100: #edeef2,
+    200: #dcdee6,
+    300: #bbbfcc,
+    400: #9ea2b3,
+    500: #838799,
+    600: #6b6f80,
+    700: #545766,
+    900: #292b33,
+  ),
+  primary: (
+    50: #fbf2f3,
+    200: #e7aeb4,
+    500: #bf3947,
+    600: #992e39,
+  ),
+  shades: (
+    black: #000000,
+    white: #ffffff,
+  ),
+  warning: (
+    300: #fcd34d,
+    500: #f59e0b,
+  ),
+);
+
+:root {
+  @each $colorname, $palette in $palettes {
+    @each $key, $value in $palette {
+      $keyname: "--palette-" + $colorname + "-" + $key;
+      #{$keyname}: #{$value};
+    }
+  }
+}
+
+$font: "Inter";
+$size-16: 16px;
+$size-12: 12px;
+$size-20: 20px;
+$size-24: 24px;
+$weight-500: 500;
+$weight-600: 600;

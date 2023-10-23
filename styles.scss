@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import "variables";
+@import "mixins";
+
+body {
+  background-color: var(--palette-shades-white);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.sidebar {
+  min-width: 252px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  border-right: 1px solid var(--palette-neutral-200);
+  background: var(--palette-shades-white);
+}
+
+.sidebar-header {
+  @include flex-style(flex, $size-16, center, stretch);
+}
+
+.trip-button {
+  @include flex-style(inline-flex, 8px, center, none);
+  justify-content: center;
+  background-color: var(--palette-primary-500);
+  border-radius: 8px;
+  height: 44px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  color: var(--palette-shades-white);
+  border: none;
+
+  @include text-style($size-16, $size-20, 0, $weight-600);
+
+  &:hover {
+    background-color: var(--palette-primary-600);
+  }
+}
+
+.tabbar {
+  flex: 1 0 0;
+  align-self: stretch;
+  overflow: auto;
+  padding: 0px 0px 32px 0px;
+
+  &-title {
+    color: var(--palette-neutral-500);
+    padding: 0px $size-20;
+    text-align: left;
+    @include text-style($size-12, $size-16, calc($size-24/100), $weight-600);
+  }
+
+  &-item {
+    @include flex-style(flex, $size-16, center, stretch);
+    height: auto 40px;
+    padding: 0px $size-20;
+    color: var(--palette-neutral-600);
+    background-color: var(--palette-shades-white);
+    border-radius: $size-12;
+
+    @include text-style($size-16, $size-20, calc($size-24/75), $weight-500);
+
+    &:hover {
+      background-color: var(--palette-neutral-100);
+      color: var(--palette-primary-500);
+    }
+  }
+}
+
+.footer {
+  @include flex-style(flex, $size-12, center, none);
+
+  &-img {
+    border-radius: 8px;
+    border: 1px solid var(--palette-neutral-200);
+    height: 48px;
+    width: 48.4px;
+  }
+
+  &-name {
+    color: var(--palette-neutral-600);
+    @include text-style($size-16, $size-20, calc($size-24/75), $weight-500);
+  }
+}
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  @include flex-style(flex, 8px, flex-start, stretch);
+  flex-direction: column;
+  padding: 12px 24px 0 24px;
+  border-bottom: 1px solid var(--palette-neutral-200);
+  background: var(--palette-shades-white);
+  height: 120px;
+
+  &-one {
+    @include flex-style(flex, none, center, stretch);
+    justify-content: space-between;
+    color: var(--palette-shades-black);
+  }
+  &-two {
+    @include flex-style(flex, none, flex-start, none);
+    @include text-style($size-16, $size-20, calc($size-24/75), $weight-500);
+  }
+}
+
+.heading {
+  @include text-style(28px, 37px, -0.56px, 800);
+}
+
+.filter-button {
+  @include flex-style(flex, 8px, center, none);
+  justify-content: center;
+  border-radius: 8px;
+  border-radius: 8px;
+  width: 101px;
+  height: 44px;
+  border: 1px solid var(--palette-neutral-200);
+  background: var(--palette-shades-white);
+  @include text-style($size-16, $size-20, calc($size-24/75), $weight-500);
+
+  &:hover {
+    color: var(--palette-primary-500);
+    border: 1px solid var(--palette-primary-200);
+    box-shadow: -4px 4px 55px 0px rgba(191, 57, 71, 0.12);
+  }
+}
+
+.tab-one {
+  border-bottom: 2px solid var(--palette-primary-500);
+  color: var(--palette-neutral-900);
+  padding: 0px 12px 16px 12px;
+}
+
+.tab-two {
+  padding: 0px 12px 16px 12px;
+  color: var(--palette-neutral-600);
+}
+
+.card {
+  @include flex-style(flex, $size-12, flex-start, stretch);
+  padding: 24px 24px;
+  flex-wrap: wrap;
+
+  &-item {
+    @include flex-style(flex, 0px, flex-start, none);
+    flex: 1 0 0;
+    padding: 0px 20px 16px 20px;
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1px solid var(--palette-neutral-200);
+    background-color: var(--palette-shades-white);
+  }
+}
+
+.item-one {
+  @include flex-style(flex, 0px, center, stretch);
+  justify-content: space-between;
+}
+
+.row-one {
+  @include text-style($size-12, $size-16, 0, $weight-500);
+  color: var(--palette-neutral-700);
+}
+
+.row-two {
+  @include text-style($size-12, $size-16, 0, $weight-500);
+  color: var(--palette-neutral-400);
+  @include flex-style(flex, 3px, center, none);
+}
+
+.item-two {
+  @include text-style(23px, 28px, 0px, 700);
+  color: var(--palette-shades-black);
+}
+.item-three {
+  @include flex-style(flex, 0, flex-start, stretch);
+  justify-content: space-between;
+
+  &-box > p {
+    display: block;
+    margin-block-end: 0;
+    @include text-style(11px, 14px, 0.22px, $weight-500);
+  }
+  &-box > div {
+    @include flex-style(flex, 8px, center, 0);
+  }
+}
+
+.number {
+  @include text-style($size-16, $size-20, 0, $weight-600);
+  margin: 0px;
+}
+.rect {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.red {
+  background-color: var(--palette-error-400);
+}
+.blue {
+  background-color: var(--palette-info-300);
+}
+.yellow {
+  background-color: var(--palette-warning-300);
+}
+@media only screen and (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-header {
+    @include flex-style(flex, none, flex-start, none);
+    flex-direction: column;
+    position: fixed;
+    border-bottom: 1px solid var(--palette-neutral-200);
+    background-color: var(--palette-shades-white);
+    padding: 24px 0px;
+    width: 100%;
+  }
+  .mobile-header-bar {
+    display: inline-flex;
+    gap: 16px;
+    padding: 0px 16px;
+  }
+  .header {
+    padding: 16px 24px 0px 24px;
+    margin-top: 64px;
+    background-color: var(--palette-neutral-50);
+  }
+  .item-three {
+    flex-direction: column;
+  }
+  .item-three-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,15 @@
+@mixin text-style($font-size, $line-height, $letter-spacing, $font-weight) {
+  font-family: $font;
+  font-style: normal;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin flex-style($flex, $gap, $align-items, $align-self) {
+  display: $flex;
+  gap: $gap;
+  align-items: $align-items;
+  align-self: $align-self;
+}
